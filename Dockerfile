@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-12:1-70 AS builder
 
 USER root
-RUN yum install -y python36 --nobest && yum clean all
+RUN yum install -y python36 
 
 WORKDIR /opt/app-root/src
 
