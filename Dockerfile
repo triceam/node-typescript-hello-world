@@ -29,11 +29,12 @@ COPY --from=builder /opt/app-root/src/dist dist
 COPY package*.json ./
 RUN npm ci --only=production
 
-# COPY licenses /licenses
-# COPY public public
+COPY licenses /licenses
+COPY public public
 
 ENV HOST=0.0.0.0 PORT=3000
 
 EXPOSE 3000/tcp
 
 CMD ["npm","run","serve"]
+
